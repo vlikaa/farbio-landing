@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AIAssistantCustomInstructionsStorage">
+    <option name="instructions">
+      <map>
+        <entry key="AIAssistant.VCS.GenerateCommitMessage">
+          <value>
+            <AIAssistantStoredInstruction>
+              <option name="actionId" value="AIAssistant.VCS.GenerateCommitMessage" />
+              <option name="content" value="Generate a SHORT commit message. No explanations. No details. Just the essential change in imperative mood.&#10;&#10;Format: [verb]: [what changed]&#10;&#10;Examples:&#10;feat: add home screen component&#10;feat: implement user authentication&#10;feat: add dark mode toggle&#10;fix: resolve login validation issue  &#10;fix: patch memory leak in cache&#10;fix: correct button alignment&#10;docs: update API documentation&#10;docs: add installation guide&#10;style: update button colors&#10;style: improve responsive design&#10;refactor: simplify user service logic&#10;refactor: extract payment calculator&#10;test: add login component tests&#10;test: cover edge cases in validator&#10;chore: update dependencies&#10;chore: configure eslint rules&#10;perf: optimize image loading&#10;perf: reduce bundle size&#10;ci: setup github actions&#10;build: update webpack config&#10;revert: remove experimental feature&#10;revert: undo navbar changes&#10;delete: remove deprecated API endpoints&#10;delete: drop legacy user table&#10;remove: old logo assets&#10;security: fix XSS vulnerability&#10;security: add input sanitization&#10;&#10;Current branch: $GIT_BRANCH_NAME&#10;Changes: {diff}" />
+            </AIAssistantStoredInstruction>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
