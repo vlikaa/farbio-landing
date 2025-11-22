@@ -1,0 +1,128 @@
+{
+  "Header": {
+    "services": "Xidmətlər",
+    "about": "Haqqımızda",
+    "portfolio": "Portfolio",
+    "call": "zəng et"
+  },
+  "Hero": {
+    "gardening": "bağçılıq",
+    "header": "Gözəl bağ\nəlavə narahatlıq olmadan",
+    "description": "Sizin sahənizin qayğısına qalırıq ki, siz\nyalnız nəticədən zövq alın",
+    "button": "Pulsuz məsləhət"
+  },
+  "Services": {
+    "tag": "bizim xidmətlər",
+    "title": "Bağınız üçün lazım olan hər şey",
+    "subtitle": "Sahənin tam qayğısını öz üzərimizə götürürük\n— çəməndən ağaclara qədər",
+    "items": {
+      "design": {
+        "title": "Bağ dizaynı",
+        "description": "Sahəniz üçün stil və rahat landşaft yaradırıq."
+      },
+      "lawn": {
+        "title": "Çəmən əkmə",
+        "description": "Torpağın hazırlanmasından ideal ot örtüyünə qədər"
+      },
+      "construction": {
+        "title": "Konstruksiya tikintisi",
+        "description": "Rahatlıq üçün çardaq, yollar və dekorativ elementlər tikirik."
+      },
+      "planting": {
+        "title": "Bitki əkmə",
+        "description": "İl boyu gözəllik üçün bitkiləri seçirik və əkirik."
+      },
+      "irrigation": {
+        "title": "Sulama sistemi",
+        "description": "Vaxta qənaət edən və bağın təzəliyini qoruyan suvarma quraşdırırıq."
+      },
+      "pruning": {
+        "title": "Ağac kəsilməsi",
+        "description": "Ağacların sağlamlığını və bağın nizamlı görünüşünü qoruyuruq."
+      }
+    }
+  },
+  "About": {
+    "tag": "haqqımızda",
+    "title": "15+ il yaşıllaşdırma təcrübəsi",
+    "description": "Biz artıq 15 ildən çoxdur bağlarla məşğul oluruq. Bu müddət ərzində yüzlərlə ailəyə öz sahələrini qayğılı və gözəl etməyə kömək etdik. Biz bitkiləri sevirik və işləyirik ki, bağınız hər gün sizi sevindirsin.",
+    "stats": {
+      "affordable": {
+        "label": "Ən",
+        "value": "Sərfəli qiymətlər"
+      },
+      "quality": {
+        "label": "Keyfiyyət",
+        "value": "Bizim üçün vacibdir"
+      },
+      "clients": {
+        "label": "200 +",
+        "value": "Məmnun müştəri"
+      },
+      "plants": {
+        "label": "150 +",
+        "value": "Bitki növü"
+      }
+    }
+  },
+  "Reviews": {
+    "tag": "RƏYLƏR",
+    "title": "Müştərilərimiz bizim haqqımızda nə deyir",
+    "items": [
+      {
+        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
+      },
+      {
+        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
+      },
+      {
+        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
+      },
+      {
+        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
+      }
+    ]
+  },
+  "Portfolio": {
+    "tag": "portfolyo",
+    "title": "Bizim layihələr",
+    "viewMore": "Daha çox bax"
+  },
+  "ConsultationForm": {
+    "title": "Bağınızı dəyişdirməyə hazırsınız?",
+    "subtitle": "Pulsuz məsləhət və smeta almaq üçün\nbu gün bizimlə əlaqə saxlayın.",
+    "formTitle": "Müraciət göndərin",
+    "fields": {
+      "firstName": "Ad*",
+      "lastName": "Soyad",
+      "email": "e-mail*",
+      "phone": "Telefon nömrəsi*",
+      "description": "Sahəni təsvir edin"
+    },
+    "button": "zəng et",
+    "contact": {
+      "phone": "Telefon",
+      "email": "e-mail",
+      "facebook": "Facebook"
+    },
+    "phoneNumber": "+994 50 674 85 35",
+    "emailAddress": "farbioaz@gmail.com",
+    "facebookPage": "BagEvi Dacha",
+    "success": "Təşəkkürlər! Müraciətiniz göndərildi.",
+    "error": "Xəta baş verdi. Zəhmət olmasa, yenidən cəhd edin."
+  },
+  "Footer": {
+    "description": "Gözəl sahələr üçün peşəkar bağ xidmətləri. 15 ildən çoxdur bağlarda rahatlıq və nizam yaradırıq.",
+    "copyright": "© 2025 Farbio. Bütün hüquqlar qorunur.",
+    "services": "Xidmətlər",
+    "contacts": "Əlaqə",
+    "orderWebsite": "Sayt sifariş et",
+    "orderWebsitePhone": "+994 50 670 98 89",
+    "servicesList": {
+      "lawn": "Çəmən əkmə",
+      "planting": "Bitki əkmə",
+      "irrigation": "Damcı sistemi",
+      "pruning": "Ağac kəsilməsi"
+    }
+  }
+}
