@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
-import './globals.css';
+import '../globals.css';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -11,11 +11,12 @@ interface RootLayoutProps {
 	children: ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+
 	return (
-		<html lang="en">
+		<html lang={ 'ru' }>
 		<body>
-		{ children }
+			{ children }
 		</body>
 		</html>
 	);
