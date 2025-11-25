@@ -11,7 +11,7 @@ export default function ContactItem({ icon, label, value, className }: ContactIt
 			<div className="flex-shrink-0 w-[30px] h-[30px] md:w-[50px] md:h-[50px]">
 				{ icon }
 			</div>
-			<div className="flex flex-col justify-center gap-[5px]">
+			<div className="flex flex-col justify-center">
 				<span className="text-[16px] md:text-[20px] font-inter font-light md:font-bold text-white">
 					{ label }
 				</span>
