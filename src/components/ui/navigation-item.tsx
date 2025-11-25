@@ -19,7 +19,7 @@ function NavigationItem({ item }: NavigationItemProps) {
 					if (entry.isIntersecting) {
 						setIsActive(true);
 					} else {
-						
+
 						setIsActive(false);
 					}
 				});
@@ -41,11 +41,11 @@ function NavigationItem({ item }: NavigationItemProps) {
 		e.preventDefault();
 		const sectionId = item.href.replace('#', '');
 		const section = document.getElementById(sectionId);
-		
+
 		if (section) {
 			const headerHeight = 50;
 			const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-			
+
 			window.scrollTo({
 				top: sectionTop,
 				behavior: 'smooth'
@@ -60,10 +60,10 @@ function NavigationItem({ item }: NavigationItemProps) {
 				onClick={ handleClick }
 				className={ `
 					text-[16px] font-inter font-light transition-colors'
-					${ isActive 
-						? 'text-[#00AE54]' 
-						: 'text-[#002B15] hover:text-[#00AE54]' 
-					}
+					${ isActive
+					? 'text-[#00AE54]'
+					: 'text-[#002B15] hover:text-[#00AE54]'
+				}
 				` }
 			>
 				{ item.name }
