@@ -76,7 +76,7 @@ export default function ConsultationForm() {
 			</p>
 
 			<div
-				className="mb-[10px] md:mb-[37px] xl:mb-[60px] px-[20px] py-[30px] md:px-[33px] md:py-[40px] bg-white/20 border border-white/20 rounded-xl">
+				className="mb-[25px] md:mb-[37px] xl:mb-[60px] px-[20px] py-[30px] md:px-[33px] md:py-[40px] bg-white/20 border border-white/20 rounded-xl">
 				<h3 className="mb-[20px] md:mb-[12px] text-[16px] md:text-[24px] font-roboto font-medium md:font-extrabold text-white">
 					{ t('formTitle') }
 				</h3>
