@@ -23,7 +23,7 @@ export default function Services() {
 	];
 
 	return (
-		<section id="services" className="py-[50px] md:py-[100px] bg-gradient-to-t from-[#00D969]/60 via-white to-white">
+		<section id="services" className="py-[50px] md:py-[100px] bg-gradient-to-t from-[#00D969]/30 via-white to-white">
 			<div className="max-w-7xl mx-auto flex flex-col items-center">
 				<SectionTitle title={ t('tag') } />
 
