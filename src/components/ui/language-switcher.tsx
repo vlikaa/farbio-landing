@@ -27,6 +27,25 @@ export default function LanguageSwitcher() {
 
 	const [open, setOpen] = React.useState(false)
 	const [value, setValue] = React.useState(locale)
+	const [mounted, setMounted] = React.useState(false)
+
+	React.useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	if (!mounted) {
+		return (
+			<Button
+				variant="outline"
+				role="combobox"
+				aria-expanded={ false }
+				className="justify-between"
+			>
+				{ locale.toUpperCase() }
+				<ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50"/>
+			</Button>
+		)
+	}
 
 	return (
 		<Popover open={ open } onOpenChange={ setOpen }>
