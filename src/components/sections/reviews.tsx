@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'use-intl';
 import SectionTitle from '@/components/ui/section-title';
 import { ReviewCard } from '@/components/ui/review-card';
-import AvatarIcon from '@/components/icons/avatar-icon';
 import { Marquee } from '@/components/ui/marquee';
 
 type Review = {
@@ -94,7 +93,7 @@ export default function Reviews() {
 					<Marquee pauseOnHover={true}>
 						{ reviewsSet.map((review, index) => (
 							<ReviewCard
-								icon={ <AvatarIcon /> }
+								avatarPath={ undefined }
 								stars={ review.rating ?? 5 }
 								key={ review.id ? `review-${ review.id }` : `review-${ index }` }
 								text={ review.text }
