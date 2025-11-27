@@ -9,7 +9,6 @@ import { EmailIcon } from '@/components/icons/email-icon';
 import ContactItem from '@/components/ui/contact-item';
 
 
-
 export default function ConsultationForm() {
 	const t = useTranslations('ConsultationForm');
 	const [formData, setFormData] = useState({
@@ -65,8 +64,8 @@ export default function ConsultationForm() {
 	};
 
 	return (
-		<section
-			className="flex flex-col items-center py-[50px] md:py-[100px] px-[20px] bg-gradient-to-br from-[#006D35] to-[#00D366]">
+		<section id="consultation"
+				 className="flex flex-col items-center py-[50px] md:py-[100px] px-[20px] bg-gradient-to-br from-[#006D35] to-[#00D366]">
 			<h2 className="text-[26px] md:text-[48px] font-inter font-bold md:font-extrabold text-center text-white">
 				{ t('title') }
 			</h2>

@@ -1,19 +1,74 @@
 'use client'
 
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'use-intl';
 import SectionTitle from '@/components/ui/section-title';
 import { ReviewCard } from '@/components/ui/review-card';
 import AvatarIcon from '@/components/icons/avatar-icon';
 import { Marquee } from '@/components/ui/marquee';
 
+type Review = {
+	id?: number;
+	name?: string;
+	text: string;
+	rating?: number;
+	avatar?: string;
+};
+
 export default function Reviews() {
 	const t = useTranslations('Reviews');
-	const reviews = t.raw('items') as Array<{ text: string }>;
+	const [reviews, setReviews] = useState<Review[]>([]);
+	const fallbackReviews = useMemo<Review[]>(() => {
+		const items = t.raw('items') as Array<{ text: string }>;
+		return items.map((item, index) => ({
+			id: index,
+			text: item.text,
+		}));
+	}, [t]);
 
-	const reviewsSet = [...reviews];
+	useEffect(() => {
+		let isMounted = true;
+		const controller = new AbortController();
+
+		const fetchReviews = async () => {
+			try {
+				const response = await fetch('/api/reviews', {
+					signal: controller.signal,
+					cache: 'no-store',
+				});
+
+				if (!response.ok) {
+					throw new Error('Failed to load reviews');
+				}
+
+				const data = (await response.json()) as Review[];
+
+				if (isMounted) {
+					setReviews(data);
+				}
+			} catch (error) {
+				if (error instanceof DOMException && error.name === 'AbortError') {
+					return;
+				}
+
+				if (process.env.NODE_ENV !== 'production') {
+					console.error('Unable to load reviews', error);
+				}
+			}
+		};
+
+		fetchReviews();
+
+		return () => {
+			isMounted = false;
+			controller.abort();
+		};
+	}, []);
+
+	const reviewsSet = reviews.length ? reviews : fallbackReviews;
 
 	return (
-		<section className="py-[50px] md:py-[100px] bg-gradient-to-b from-[#00D969]/30 via-white to-white">
+		<section id="reviews" className="py-[50px] md:py-[100px] bg-gradient-to-b from-[#00D969]/30 via-white to-white">
 			<div className="flex flex-col items-center">
 				<SectionTitle title={ t('tag') }/>
 
@@ -38,7 +93,12 @@ export default function Reviews() {
 				<div className="relative w-full overflow-hidden">
 					<Marquee pauseOnHover={true}>
 						{ reviewsSet.map((review, index) => (
-							<ReviewCard icon={ <AvatarIcon /> } stars={5} key={ `first-${ index }` } text={ review.text }/>
+							<ReviewCard
+								icon={ <AvatarIcon /> }
+								stars={ review.rating ?? 5 }
+								key={ review.id ? `review-${ review.id }` : `review-${ index }` }
+								text={ review.text }
+							/>
 						)) }
 					</Marquee>
 				</div>

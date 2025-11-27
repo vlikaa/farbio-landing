@@ -2,8 +2,9 @@
   "Header": {
     "services": "Xidmətlər",
     "about": "Haqqımızda",
+    "reviews": "Rəylər",
     "portfolio": "Portfolio",
-    "call": "zəng et"
+    "call": "Əlaqə"
   },
   "Hero": {
     "gardening": "bağçılıq",
@@ -99,7 +100,7 @@
       "phone": "Telefon nömrəsi*",
       "description": "Sahəni təsvir edin"
     },
-    "button": "zəng et",
+    "button": "Göndər",
     "contact": {
       "phone": "Telefon",
       "email": "e-mail",

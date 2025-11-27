@@ -13,6 +13,7 @@ import BurgerMenu from '@/components/ui/burger-menu';
 const navigationKeys = [
 	{ key: 'services', href: '#services' },
 	{ key: 'about', href: '#about' },
+	{ key: 'reviews', href: '#reviews' },
 	{ key: 'portfolio', href: '#portfolio' }
 ];
 
@@ -52,6 +53,7 @@ export default function Header() {
 				<div className="hidden xl:flex xl:justify-end xl:gap-[20px]">
 					<LanguageSwitcher/>
 					<Button
+						href="#consultation"
 						className="flex items-center justify-center rounded-md h-[30px] w-[177px] bg-[#00823F] text-white cursor-pointer hover:opacity-90"
 						title={ t('call') }/>
 				</div>

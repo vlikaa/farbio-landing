@@ -2,8 +2,9 @@
   "Header": {
     "services": "Услуги",
     "about": "О нас",
+    "reviews": "Отзывы",
     "portfolio": "Портфолио",
-    "call": "позвонить"
+    "call": "Связаться"
   },
   "Hero": {
     "gardening": "садоводство",
@@ -99,7 +100,7 @@
       "phone": "Номер телефона*",
       "description": "Опишите участок"
     },
-    "button": "позвонить",
+    "button": "Отправить",
     "contact": {
       "phone": "Телефон",
       "email": "e-mail",

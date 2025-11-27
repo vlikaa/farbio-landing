@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { NavItem } from '@/types/navigation';
 import LanguageSwitcher from '@/components/ui/language-switcher';
+import { PhoneIcon } from '@/components/icons/phone-icon';
 
 interface BurgerMenuProps {
 	isOpen: boolean
@@ -39,11 +40,11 @@ function BurgerMenu({ isOpen, onClose, items }: BurgerMenuProps) {
 				${ isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0' }
 			` }
 		>
-			<div className="flex justify-between items-start px-[20px] py-[30px]">
+			<div className="flex justify-between items-start px-[20px] py-[30px] md:px-[60px]">
 				<nav>
 					<ul className="flex flex-col gap-[25px]">
 						{ items.map((item) => (
-							<li key={item.name}>
+							<li key={ item.name }>
 								<a
 									href={ item.href }
 									onClick={ (e) => handleNavClick(e, item) }
@@ -56,7 +57,13 @@ function BurgerMenu({ isOpen, onClose, items }: BurgerMenuProps) {
 					</ul>
 				</nav>
 
-				<LanguageSwitcher/>
+				<div className="flex flex-col gap-[135px] items-center">
+					<LanguageSwitcher/>
+
+					<div className="w-[40px] h-[40px]">
+						<PhoneIcon/>
+					</div>
+				</div>
 			</div>
 		</div>
 	)

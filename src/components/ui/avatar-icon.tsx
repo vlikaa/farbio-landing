@@ -1,11 +1,20 @@
+import Image from 'next/image';
+
 interface AvatarIconProps {
-	icon: React.ReactNode;
+	path: string | undefined;
 }
 
-export default function AvatarIcon({ icon }: AvatarIconProps) {
+export default function AvatarIcon({ path }: AvatarIconProps) {
 	return (
-		<div className="flex flex-shrink-0 w-[25px] h-[25px] md:w-[45px] md:h-[45px]">
-			{ icon }
+		<div>
+			<Image
+				src={ path != undefined ? path : '/images/reviews/user1-avatar.png' }
+				alt="image"
+				width={ 25 }
+				height={ 25 }
+				priority
+				className=" md:w-[45px] md:h-[45px]"
+			/>
 		</div>
 	);
 }

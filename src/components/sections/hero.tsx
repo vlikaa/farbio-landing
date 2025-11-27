@@ -21,6 +21,7 @@ export default function Hero() {
 			</p>
 
 			<Button
+				href="#consultation"
 				title={ t('button') }
 				className="flex justify-center items-center h-[40px] w-[176px] xl:h-[50px] xl:w-[200px] bg-white rounded-md text-[#00823F] hover:bg-[#CCF7E1] hover:text-[#00572A] cursor-pointer"
 			/>
