@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Logo from '@/components/ui/logo';
 import NavigationBar from '@/components/ui/navigation-bar';
-import Button from '@/components/ui/button';
+import CustomButton from '@/components/ui/custom-button';
 import LanguageSwitcher from '@/components/ui/language-switcher';
 import { useTranslations } from 'use-intl';
 import { useState } from 'react';
@@ -50,9 +50,9 @@ export default function Header() {
 					<NavigationBar items={ navigation }/>
 				</div>
 
-				<div className="hidden xl:flex xl:justify-end xl:gap-[20px]">
+				<div className="hidden xl:flex justify-end items-center gap-[20px]">
 					<LanguageSwitcher/>
-					<Button
+					<CustomButton
 						href="#consultation"
 						className="flex items-center justify-center rounded-md h-[30px] w-[177px] bg-[#00823F] text-white cursor-pointer hover:opacity-90"
 						title={ t('call') }/>

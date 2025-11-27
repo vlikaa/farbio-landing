@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'use-intl';
-import Button from '@/components/ui/button';
+import CustomButton from '@/components/ui/custom-button';
 
 export default function Hero() {
 	const t = useTranslations('Hero');
@@ -20,7 +20,7 @@ export default function Hero() {
 				{ t('description') }
 			</p>
 
-			<Button
+			<CustomButton
 				href="#consultation"
 				title={ t('button') }
 				className="flex justify-center items-center h-[40px] w-[176px] xl:h-[50px] xl:w-[200px] bg-white rounded-md text-[#00823F] hover:bg-[#CCF7E1] hover:text-[#00572A] cursor-pointer"
