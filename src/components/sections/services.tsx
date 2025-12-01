@@ -23,7 +23,7 @@ export default function Services() {
 	];
 
 	return (
-		<section id="services" className="py-[50px] md:py-[100px] bg-gradient-to-t from-[#00D969]/30 via-white to-white">
+		<section id="services" className="py-[50px] md:py-[100px] bg-gradient-to-t from-[#00D969]/30 via-white to-white 2xl:py-[200px]">
 			<div className="max-w-7xl mx-auto flex flex-col items-center">
 				<SectionTitle title={ t('tag') } />
 
@@ -31,11 +31,11 @@ export default function Services() {
 					{ t('title') }
 				</h2>
 
-				<p className="mb-[40px] md:mb-[60px] text-[12px] md:text-[16px] font-inter font-light text-center text-[#2D2D2D] whitespace-pre-line">
+				<p className="mb-[40px] md:mb-[60px] text-[12px] md:text-[16px] font-inter font-light text-center text-[#2D2D2D] whitespace-pre-line 2xl:mb-[100px]">
 					{ t('subtitle') }
 				</p>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[16px] xl:gap-[20px]">
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[16px] md:gap-x-[20px] md:gap-y-[30px] 2xl:gap-x-[100px]">
 					{ services.map((service) => (
 						<ServiceCard
 							key={ service.key }
