@@ -4,7 +4,7 @@ import { NavigationBarProps } from '@/types/navigation';
 export default function NavigationBar({ items }: NavigationBarProps) {
 	return (
 		<nav>
-			<ul className="hidden xl:flex xl:gap-[45px]">
+			<ul className="hidden xl:flex xl:gap-[45px] 2xl:gap-[105px]">
 				{ items.map((item) => (
 					<NavigationItem item={ item } key={ item.name }/>
 				)) }
