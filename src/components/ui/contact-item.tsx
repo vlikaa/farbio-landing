@@ -7,7 +7,7 @@ interface ContactItemProps {
 
 export default function ContactItem({ icon, label, value, className }: ContactItemProps) {
 	return (
-		<div className={ `flex justify-center items-center gap-[12px] md:gap-[20px] ${ className }` }>
+		<div className={ `flex justify-center items-center gap-[12px] md:gap-[20px] 2xl:justify-start ${ className }` }>
 			<div className="flex-shrink-0 w-[30px] h-[30px] md:w-[50px] md:h-[50px]">
 				{ icon }
 			</div>
