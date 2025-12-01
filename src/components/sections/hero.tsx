@@ -7,7 +7,7 @@ export default function Hero() {
 	const t = useTranslations('Hero');
 
 	return (
-		<section className="flex flex-col items-center bg-gradient-to-br from-[#00D366] to-[#006D35] py-[50px] md:py-[100px]">
+		<section className="flex flex-col items-center bg-gradient-to-br from-[#00D366] to-[#006D35] py-[50px] md:py-[100px] 2xl:py-[200px]">
 			<div className="flex justify-center items-center font-light w-[100px] xl:w-[176px] border-1 border-white/20 bg-white/20 rounded-[8px] text-[12px]">
 				<p className="font-inter text-white">{ t('gardening') }</p>
 			</div>
@@ -16,7 +16,7 @@ export default function Hero() {
 				{ t('header') }
 			</h1>
 
-			<p className="mb-[40px] md:mb-[50px] text-[12px] md:text-[16px] text-white font-inter font-light text-center leading-[15px] md:leading-[20px] whitespace-pre-line">
+			<p className="mb-[40px] md:mb-[50px] text-[12px] md:text-[16px] text-white font-inter font-light text-center leading-[15px] md:leading-[20px] whitespace-pre-line 2xl:mb-[100px]">
 				{ t('description') }
 			</p>
 
