@@ -33,11 +33,11 @@ export default function Portfolio() {
 	const displayedImages = showAll ? images : images.slice(0, initialImages);
 
 	return (
-		<div id="portfolio" className="relative w-full min-h-[877px] py-[50px] md:py-[100px] px-4 md:px-6 bg-white">
+		<div id="portfolio" className="relative w-full min-h-[877px] py-[50px] md:py-[100px] px-4 md:px-6 bg-white xl:py-[200px]">
 			<div className="flex flex-col items-center">
 				<SectionTitle title={ t('tag') }/>
 
-				<h2 className="mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:text-[48px] md:font-roboto md:font-extrabold xl:mb-[60px]">
+				<h2 className="mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:text-[48px] md:font-roboto md:font-extrabold xl:mb-[60px] 2xl:mb-[100px]">
 					{ (() => {
 						const title = t('title');
 						const highlightWords = ['проекты', 'layihələr'];
@@ -57,17 +57,15 @@ export default function Portfolio() {
 					})() }
 				</h2>
 
-				<div className="w-full max-w-[335px] md:max-w-5xl mb-8 md:mb-12">
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-						{ displayedImages.map((src, index) => (
-							<PortfolioImage key={ `${ src }-${ index }` } src={ src } alt={ `Portfolio image ${ index + 1 }` }/>
-						)) }
-					</div>
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-x-[10px] gap-y-[20px] mb-[40px] md:gap-x-[20px] md:gap-y-[30px] xl:mb-[60px] 2xl:grid-cols-6 2xl:mb-[100px]">
+					{ displayedImages.map((src, index) => (
+						<PortfolioImage key={ `${ src }-${ index }` } src={ src } alt={ `Portfolio image ${ index + 1 }` }/>
+					)) }
 				</div>
 
 				<button
 					onClick={ () => setShowAll(!showAll) }
-					className="text-[18px] md:text-[20px] font-roboto font-extrabold leading-[36px] text-[#00572A] underline hover:opacity-80 transition-opacity"
+					className="text-[18px] md:text-[20px] font-roboto font-extrabold text-[#00572A] underline hover:opacity-80 transition-opacity 2xl:text-[24px]"
 				>
 					{ t('viewMore') }
 				</button>
