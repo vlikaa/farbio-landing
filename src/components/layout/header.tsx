@@ -39,7 +39,7 @@ export default function Header() {
 
 	return (
 		<header className="sticky z-20 top-0 left-0 bg-white">
-			<div className="flex justify-between items-center h-[50px] px-[20px] xl:grid md:grid-cols-3 md:px-[60px] 2xl:px-[120px]">
+			<div className="flex justify-between items-center px-[20px] py-[5px] xl:grid md:grid-cols-3 md:px-[60px] 2xl:px-[100px] 2xl:py-[20px]">
 				<div className="flex justify-start">
 					<Link href="/">
 						<Logo/>
@@ -50,7 +50,7 @@ export default function Header() {
 					<NavigationBar items={ navigation }/>
 				</div>
 
-				<div className="hidden xl:flex justify-end items-center gap-[20px]">
+				<div className="hidden xl:flex justify-end items-center gap-[20px] 2xl:gap-[60px]">
 					<LanguageSwitcher/>
 					<CustomButton
 						href="#consultation"
