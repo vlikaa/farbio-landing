@@ -13,7 +13,7 @@ export default function Footer() {
 	const consultationForm = useTranslations('ConsultationForm');
 
 	return (
-		<footer className="xl:flex xl:flex-col xl:items-center py-[50px] md:py-[100px] px-[20px] md:px-[60px] bg-[#160D32]">
+		<footer className="xl:flex xl:flex-col py-[50px] md:py-[100px] px-[20px] md:px-[60px] bg-[#160D32] 2xl:px-[100px]">
 			<div className="grid gap-x-[50px] md:gap-x-0">
 				<div className="flex flex-col justify-center items-center col-span-2 md:col-span-1 md:justify-start md:items-start">
 					<Logo width={ 52 } height={ 50 }/>
@@ -30,7 +30,7 @@ export default function Footer() {
 				<p className="md:hidden col-span-2 md:col-span-1 md:row-start-2 mt-[20px] mb-[40px] text-[8px] md:text-[12px] font-inter font-extralight text-center md:text-left text-white">
 					{ t('description') }
 				</p>
-
+				
 				<div className="md:col-start-2 md:row-start-1 md:mb-[34px] xl:mb-0 xl:ml-[21px] xl:mr-[280px] 2xl:ml-[150px] 2xl:mr-[380px]">
 					<h3 className="mb-[20px] md:mb-[30px] xl:mb-[46px] text-[16px] md:text-[20px] font-inter font-light md:font-bold text-white">
 						{ t('services') }
