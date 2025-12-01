@@ -67,11 +67,11 @@ export default function Reviews() {
 	const reviewsSet = reviews.length ? reviews : fallbackReviews;
 
 	return (
-		<section id="reviews" className="py-[50px] md:py-[100px] bg-gradient-to-b from-[#00D969]/30 via-white to-white">
+		<section id="reviews" className="py-[50px] md:pt-[100px] bg-gradient-to-b from-[#00D969]/30 via-white to-white 2xl:pt-[200px]">
 			<div className="flex flex-col items-center">
 				<SectionTitle title={ t('tag') }/>
 
-				<h2 className="w-[335px] mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:mb-[60px] md:w-[650px] md:text-[48px] md:font-extrabold md:font-roboto">
+				<h2 className="w-[335px] mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:mb-[60px] md:w-[650px] md:text-[48px] md:font-extrabold md:font-roboto 2xl:mb-[100px]">
 					{ (() => {
 						const title = t('title');
 						const highlightWord = title.includes('говорят') ? 'говорят' : title.includes('deyir') ? 'deyir' : '';
