@@ -71,7 +71,7 @@ export default function Reviews() {
 			<div className="flex flex-col items-center">
 				<SectionTitle title={ t('tag') }/>
 
-				<h2 className="w-[335px] mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:mb-[60px] md:w-[650px] md:text-[48px] md:font-extrabold md:font-roboto 2xl:mb-[100px]">
+				<h2 className="w-[335px] mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:mb-[60px] md:w-[650px] md:text-[48px] md:font-extrabold md:font-roboto 2xl:mb-[100px] xl:w-full">
 					{ (() => {
 						const title = t('title');
 						const highlightWord = title.includes('говорят') ? 'говорят' : title.includes('deyir') ? 'deyir' : '';
