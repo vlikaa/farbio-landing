@@ -3,50 +3,50 @@
     "services": "Xidmətlər",
     "about": "Haqqımızda",
     "reviews": "Rəylər",
-    "portfolio": "Portfolio",
+    "portfolio": "Portfel",
     "call": "Əlaqə"
   },
   "Hero": {
     "gardening": "bağçılıq",
-    "header": "Gözəl bağ\nəlavə narahatlıq olmadan",
-    "description": "Sizin sahənizin qayğısına qalırıq ki, siz\nyalnız nəticədən zövq alın",
-    "button": "Pulsuz məsləhət"
+    "header": "Əlavə qayğilar olmadan gözəl bağ",
+    "description": "Sahənizin qayğısını öz üzərimizə götürürük ki, siz\nsadəcə nəticədən zövq alasınız",
+    "button": "Ödənişsiz konsultasiya"
   },
   "Services": {
     "tag": "bizim xidmətlər",
     "title": "Bağınız üçün lazım olan hər şey",
-    "subtitle": "Sahənin tam qayğısını öz üzərimizə götürürük\n— çəməndən ağaclara qədər",
+    "subtitle": "Sahəyə tam qulluğu üzərimizə götürürük\n– qazondan tutmuş ağaclara qədər",
     "items": {
       "design": {
         "title": "Bağ dizaynı",
-        "description": "Sahəniz üçün stil və rahat landşaft yaradırıq."
+        "description": "Sahənizə uyğun dəbli və rahat landşaft yaradırıq"
       },
       "lawn": {
-        "title": "Çəmən əkmə",
+        "title": "Qazon salinmasi",
         "description": "Torpağın hazırlanmasından ideal ot örtüyünə qədər"
       },
       "construction": {
-        "title": "Konstruksiya tikintisi",
-        "description": "Rahatlıq üçün çardaq, yollar və dekorativ elementlər tikirik."
+        "title": "Konstruksiyalarin quraşdirilmasi",
+        "description": "Rahatlıq üçün çardaqlar, cığırlar və dekorativ elementlər quraşdırırıq"
       },
       "planting": {
-        "title": "Bitki əkmə",
-        "description": "İl boyu gözəllik üçün bitkiləri seçirik və əkirik."
+        "title": "Bitkilərin əkilməsi",
+        "description": "İlboyu gözəllik üçün bitkilər seçir və əkirik"
       },
       "irrigation": {
-        "title": "Sulama sistemi",
-        "description": "Vaxta qənaət edən və bağın təzəliyini qoruyan suvarma quraşdırırıq."
+        "title": "Suvarma sistemi",
+        "description": "Vaxta qənaət edən və bağın təravətini qoruyan suvarma sistemi quraşdırırıq"
       },
       "pruning": {
-        "title": "Ağac kəsilməsi",
-        "description": "Ağacların sağlamlığını və bağın nizamlı görünüşünü qoruyuruq."
+        "title": "Ağaclarin budanmasi",
+        "description": "Ağacların sağlamlığını və bağın səliqəli görünüşünü qoruyuruq"
       }
     }
   },
   "About": {
     "tag": "haqqımızda",
-    "title": "15+ il yaşıllaşdırma təcrübəsi",
-    "description": "Biz artıq 15 ildən çoxdur bağlarla məşğul oluruq. Bu müddət ərzində yüzlərlə ailəyə öz sahələrini qayğılı və gözəl etməyə kömək etdik. Biz bitkiləri sevirik və işləyirik ki, bağınız hər gün sizi sevindirsin.",
+    "title": "Yaşillaşdirma sahəsində 15+ il təcrübə",
+    "description": "Biz 15 ildən çoxdur ki, bağlarla məşğuluq. Bu müddət ərzində yüzlərlə ailəyə sahələrini baxımlı və gözəl etməyə kömək etmişik.\nBiz bitkiləri sevirik və elə işləyirik ki, bağınız hər gün sizi sevindirsin",
     "stats": {
       "affordable": {
         "label": "Ən",
@@ -58,7 +58,7 @@
       },
       "clients": {
         "label": "200 +",
-        "value": "Məmnun müştəri"
+        "value": "Razı müştəri"
       },
       "plants": {
         "label": "150 +",
@@ -90,9 +90,9 @@
     "viewMore": "Daha çox bax"
   },
   "ConsultationForm": {
-    "title": "Bağınızı dəyişdirməyə hazırsınız?",
-    "subtitle": "Pulsuz məsləhət və smeta almaq üçün\nbu gün bizimlə əlaqə saxlayın.",
-    "formTitle": "Müraciət göndərin",
+    "title": "Bağinizi dəyişməyə hazirsiniz?",
+    "subtitle": "Pulsuz konsultasiya və smeta əldə etmək üçün\nbu gün bizimlə əlaqə saxlayın",
+    "formTitle": "Sorğu göndərin",
     "fields": {
       "firstName": "Ad*",
       "lastName": "Soyad",
@@ -100,7 +100,7 @@
       "phone": "Telefon nömrəsi*",
       "description": "Sahəni təsvir edin"
     },
-    "button": "Göndər",
+    "button": "Göndərmək",
     "contact": {
       "phone": "Telefon",
       "email": "e-mail",
@@ -116,7 +116,7 @@
     "description": "Gözəl sahələr üçün peşəkar bağ xidmətləri. 15 ildən çoxdur bağlarda rahatlıq və nizam yaradırıq.",
     "copyright": "© 2025 Farbio. Bütün hüquqlar qorunur.",
     "services": "Xidmətlər",
-    "contacts": "Əlaqə",
+    "contacts": "Kontaktlar",
     "orderWebsite": "Sayt sifariş et",
     "orderWebsitePhone": "+994 50 670 98 89",
     "servicesList": {
