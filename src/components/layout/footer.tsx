@@ -31,7 +31,7 @@ export default function Footer() {
 					{ t('description') }
 				</p>
 				
-				<div className="md:col-start-2 md:row-start-1 md:mb-[34px] xl:mb-0 xl:ml-[21px] xl:mr-[280px] 2xl:ml-[150px] 2xl:mr-[380px]">
+				<div className="md:col-start-2 md:row-start-1 md:mb-[34px] xl:mb-0 xl:ml-[21px] xl:mr-[280px] 2xl:ml-[650px] 2xl:mr-[100px]">
 					<h3 className="mb-[20px] md:mb-[30px] xl:mb-[46px] text-[16px] md:text-[20px] font-inter font-light md:font-bold text-white">
 						{ t('services') }
 					</h3>
@@ -89,7 +89,7 @@ export default function Footer() {
 				</p>
 			</div>
 
-			<div className="max-w-3xl 2xl:max-w-5xl w-full h-px bg-white/30 mt-[40px] mb-[50px]"/>
+			<div className="w-full h-px bg-white/30 mt-[40px] mb-[50px] self-center xl:w-[766px] 2xl:w-[1480px]"/>
 
 			<div className="flex flex-col items-center gap-[8px]">
 				<h4 className="text-[16px] font-inter font-light text-white text-center">
