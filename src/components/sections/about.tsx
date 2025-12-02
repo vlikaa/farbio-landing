@@ -17,7 +17,6 @@ export default function About() {
 				<div
 					className="flex flex-col items-center xl:self-start xl:flex xl:flex-col xl:items-start xl:w-[570px] xl:gap-[10px] 2xl:w-full">
 					<h2 className="mt-[20px] xl:mt-[40px] mb-[10px] text-[27px] md:text-[48px] font-inter font-bold md:font-roboto md:font-extrabold text-center leading-[31px] md:leading-[48px] xl:text-left 2xl:mt-[100px]">
-						<span className="text-[#00823F]">15+</span>
 						<span className="text-[#2D2D2D]"> { t('title').replace(/^15\+\s*/, '') }</span>
 					</h2>
 
