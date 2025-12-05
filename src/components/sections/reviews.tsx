@@ -93,7 +93,7 @@ export default function Reviews() {
 					<Marquee pauseOnHover={true}>
 						{ reviewsSet.map((review, index) => (
 							<ReviewCard
-								avatarPath={ undefined }
+								avatarPath={ review.avatar }
 								stars={ review.rating ?? 5 }
 								key={ review.id ? `review-${ review.id }` : `review-${ index }` }
 								text={ review.text }
