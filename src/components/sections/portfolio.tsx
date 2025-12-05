@@ -33,7 +33,7 @@ export default function Portfolio() {
 	const displayedImages = showAll ? images : images.slice(0, initialImages);
 
 	return (
-		<div id="portfolio" className="relative w-full min-h-[877px] py-[50px] md:py-[100px] px-4 md:px-6 bg-white xl:py-[200px]">
+		<div id="portfolio" className="relative w-full min-h-[877px] py-[50px] md:py-[100px] px-4 md:px-6 bg-white xl:py-[200px] 2xl:px-[100px]">
 			<div className="flex flex-col items-center">
 				<SectionTitle title={ t('tag') }/>
 
