@@ -8,7 +8,7 @@
   },
   "Hero": {
     "gardening": "bağçılıq",
-    "header": "Əlavə qayğilar olmadan gözəl bağ",
+    "header": "Biz yaradırıq,\nsiz isə zövq alırsınız",
     "description": "Sahənizin qayğısını öz üzərimizə götürürük ki, siz\nsadəcə nəticədən zövq alasınız",
     "button": "Ödənişsiz konsultasiya"
   },
@@ -26,7 +26,7 @@
         "description": "Torpağın hazırlanmasından ideal ot örtüyünə qədər"
       },
       "construction": {
-        "title": "Konstruksiyalarin quraşdirilmasi",
+        "title": "Konstruksiya yığımı",
         "description": "Rahatlıq üçün çardaqlar, cığırlar və dekorativ elementlər quraşdırırıq"
       },
       "planting": {
