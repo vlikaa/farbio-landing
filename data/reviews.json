@@ -9,13 +9,13 @@
     "id": 2,
     "text": "небольшой невзрачный участок дачи за несколько часов превратился в красоту.  Все было сделано быстро, качественно, с учетом всех моих пожеланий.",
     "rating": 5,
-    "avatar": "/images/reviews/user2-avatar.jpg"
+    "avatar": "/images/reviews/user2-avatar.png"
   },
   {
     "id": 3,
     "text": "Небольшой кустик каллистемона, которого посадилт в нашем саду два года назад, вырос до двух метров в высоту. Большое спасибо!",
     "rating": 5,
-    "avatar": "/images/reviews/user3-avatar.jpg"
+    "avatar": "/images/reviews/user3-avatar.png"
 
   }
 ]
