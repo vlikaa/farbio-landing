@@ -11,7 +11,7 @@ export default function About() {
 	return (
 		<section id="about" className="relative overflow-hidden ">
 			<div
-				className="flex flex-col items-center py-[50px] md:py-[100px] px-[20px] md:px-[60px] 2xl:py-[200px] 2xl:px-[250px]">
+				className="flex flex-col items-center py-[50px] md:py-[100px] px-[20px] md:px-[60px] 2xl:py-[200px] 2xl:px-[100px]">
 				<SectionTitle title={ t('tag') }/>
 
 				<div
