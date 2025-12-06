@@ -12,7 +12,7 @@ export default function Hero() {
 				<p className="font-inter text-white">{ t('gardening') }</p>
 			</div>
 
-			<h1 className="mt-[20px] mb-[10px] md:mt-[40px] md:mb-[20px] text-[48px] md:text-[64px] text-white font-roboto font-extrabold text-center whitespace-pre-line leading-[48px] md:leading-[72px] 2xl:leading-[85px] 2xl:text-[84px]">
+			<h1 className="mt-[20px] mb-[10px] md:mt-[40px] md:mb-[20px] text-[40px] md:text-[64px] text-white font-roboto font-extrabold text-center whitespace-pre-line leading-[48px] md:leading-[72px] 2xl:leading-[85px] 2xl:text-[84px]">
 				{ t('header') }
 			</h1>
 
