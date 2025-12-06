@@ -33,28 +33,14 @@ export default function Portfolio() {
 	const displayedImages = showAll ? images : images.slice(0, initialImages);
 
 	return (
-		<div id="portfolio" className="relative w-full min-h-[877px] py-[50px] md:py-[100px] px-4 md:px-6 bg-white xl:py-[200px] 2xl:px-[100px]">
+		<div id="portfolio" className="relative w-full min-h-[877px] pb-[50px] pt-[100px] md:py-[100px] px-4 md:px-6 bg-white xl:py-[100px] 2xl:py-[200px]">
 			<div className="flex flex-col items-center">
 				<SectionTitle title={ t('tag') }/>
 
 				<h2 className="mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:text-[48px] md:font-roboto md:font-extrabold xl:mb-[60px] 2xl:mb-[100px]">
-					{ (() => {
-						const title = t('title');
-						const highlightWords = ['проекты', 'layihələr'];
-						const highlightWord = highlightWords.find(word => title.includes(word));
-
-						if (highlightWord) {
-							const parts = title.split(highlightWord);
-							return (
-								<>
-									<span className="text-[#2D2D2D]">{ parts[0] }</span>
-									<span className="text-[#00823F]">{ highlightWord }</span>
-									{ parts[1] && <span className="text-[#2D2D2D]">{ parts[1] }</span> }
-								</>
-							);
-						}
-						return <span className="text-[#2D2D2D]">{ title }</span>;
-					})() }
+					{ t.rich('title', {
+						green: (chunks) => <span className="text-[#00823F]">{ chunks }</span>
+					}) }
 				</h2>
 
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-x-[10px] gap-y-[20px] mb-[40px] md:gap-x-[20px] md:gap-y-[30px] xl:mb-[60px] 2xl:grid-cols-6 2xl:mb-[100px]">
@@ -67,7 +53,7 @@ export default function Portfolio() {
 					onClick={ () => setShowAll(!showAll) }
 					className="text-[18px] md:text-[20px] font-roboto font-extrabold text-[#00572A] underline hover:opacity-80 transition-opacity 2xl:text-[24px]"
 				>
-					{ t('viewMore') }
+					{showAll ? t('viewLess') : t('viewMore')}
 				</button>
 			</div>
 		</div>
