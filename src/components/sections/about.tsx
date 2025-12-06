@@ -16,8 +16,10 @@ export default function About() {
 
 				<div
 					className="flex flex-col items-center xl:self-start xl:flex xl:flex-col xl:items-start xl:w-[570px] xl:gap-[10px] 2xl:w-full">
-					<h2 className="mt-[20px] xl:mt-[40px] mb-[10px] text-[27px] md:text-[48px] font-inter font-bold md:font-roboto md:font-extrabold text-center leading-[31px] md:leading-[48px] xl:text-left 2xl:mt-[100px]">
-						<span className="text-[#2D2D2D]"> { t('title').replace(/^15\+\s*/, '') }</span>
+					<h2 className="text-[#2D2D2D] mt-[20px] xl:mt-[40px] mb-[10px] text-[27px] md:text-[48px] font-inter font-bold md:font-roboto md:font-extrabold text-center leading-[31px] md:leading-[48px] xl:text-left 2xl:mt-[100px]">
+						{ t.rich('title', {
+							green: (chunks) => <span className="text-[#00823F]">{ chunks }</span>
+						}) }
 					</h2>
 
 					<div className="xl:w-[570px]">
@@ -57,7 +59,8 @@ export default function About() {
 							alt="gardener img"
 							width={ 216 }
 							height={ 289 }
-							className="absolute bottom-0 right-0 md:bottom-[-425px] md:right-[-60px] md:w-[561px] md:h-[748px] xl:w-[428px] xl:h-[571px] xl:bottom-0 xl:right-[82px] 2xl:w-[578px] 2xl:h-[737px] 2xl:right-[252px]"
+							unoptimized={true}
+							className="absolute bottom-0 right-0 md:bottom-[-435px] md:right-[-60px] md:w-[561px] md:h-[748px] xl:w-[428px] xl:h-[571px] xl:bottom-0 xl:right-[82px] 2xl:w-[578px] 2xl:h-[737px] 2xl:right-[252px]"
 						/>
 					</div>
 				</div>
