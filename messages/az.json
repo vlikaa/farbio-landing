@@ -8,13 +8,13 @@
   },
   "Hero": {
     "gardening": "bağçılıq",
-    "header": "Biz yaradırıq,\nsiz isə zövq alırsınız",
+    "header": "Biz yaradırıq,\nsiz zövq alırsınız",
     "description": "Sahənizin qayğısını öz üzərimizə götürürük ki, siz\nsadəcə nəticədən zövq alasınız",
     "button": "Ödənişsiz konsultasiya"
   },
   "Services": {
     "tag": "bizim xidmətlər",
-    "title": "Bağınız üçün lazım olan hər şey",
+    "title": "<green>Bağınız</green> üçün lazım olan hər şey",
     "subtitle": "Sahəyə tam qulluğu üzərimizə götürürük\n– qazondan tutmuş ağaclara qədər",
     "items": {
       "design": {
@@ -45,7 +45,7 @@
   },
   "About": {
     "tag": "haqqımızda",
-    "title": "Yaşillaşdirma sahəsində 15+ il təcrübə",
+    "title": "Yaşillaşdirma sahəsində <green>15+</green> il təcrübə",
     "description": "Biz 15 ildən çoxdur ki, bağlarla məşğuluq. Bu müddət ərzində yüzlərlə ailəyə sahələrini baxımlı və gözəl etməyə kömək etmişik.\nBiz bitkiləri sevirik və elə işləyirik ki, bağınız hər gün sizi sevindirsin",
     "stats": {
       "affordable": {
@@ -68,26 +68,33 @@
   },
   "Reviews": {
     "tag": "rəylər",
-    "title": "Müştərilərimiz bizim haqqımızda nə deyir",
+    "title": "Müştərilərimiz bizim haqqımızda nə <green>deyir</green>",
     "items": [
       {
-        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
+        "id": 1,
+        "text": "Müsbət rəy bildirmək istəyirəm. Bizə bir neçə ildir ki, ağac əkirlər. Öz evinizə ağac, gül əkmək istəyənlər, müraciət edə bilərsiniz.",
+        "rating": 5,
+        "avatar": "/images/reviews/user1-avatar.png"
       },
       {
-        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
+        "id": 2,
+        "text": "Bağçanın kiçik, zəifsiz, darıxdırıcı bir sahəsi bir neçə saat ərzində gözəlliyə çevrildi. Hər şey sürətli, keyfiyyətli və bütün istəklərim nəzərə alınmaqla edildi.",
+        "rating": 5,
+        "avatar": "/images/reviews/user2-avatar.png"
       },
       {
-        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
-      },
-      {
-        "text": "Çəmən qayğısı sifariş etdim. Uşaqlar vaxtında gəldilər, hər şeyi nizamlı etdilər. Çəmən indi xalça kimidir — uşaqlar ayaqyalın qaçırlar!"
+        "id": 3,
+        "text": "İki il əvvəl bağımıza əkdikləri kiçik kallistemona kolu indi iki metr hündürlüyə çatıb. Çox sağ olun!",
+        "rating": 5,
+        "avatar": "/images/reviews/user3-avatar.png"
       }
     ]
   },
   "Portfolio": {
     "tag": "portfolyo",
-    "title": "Bizim layihələr",
-    "viewMore": "Daha çox bax"
+    "title": "Bizim <green>layihələr</green>",
+    "viewMore": "Daha çox bax",
+    "viewLess": "Gizlət"
   },
   "ConsultationForm": {
     "title": "Bağinizi dəyişməyə hazirsiniz?",
@@ -99,6 +106,33 @@
       "email": "e-mail*",
       "phone": "Telefon nömrəsi*",
       "description": "Sahəni təsvir edin"
+    },
+    "toast": "Sorğu uğurla göndərildi!",
+    "validation": {
+      "name": {
+        "min": "Ad ən azı 2 simvol olmalıdır",
+        "max": "Ad 50 simvoldan çox olmamalıdır",
+        "regex": "Ad yalnız hərflər, boşluqlar və defislər ehtiva edə bilər"
+      },
+      "surname": {
+        "min": "Soyad ən azı 2 simvol olmalıdır",
+        "max": "Soyad 50 simvoldan çox olmamalıdır",
+        "regex": "Soyad yalnız hərflər, boşluqlar və defislər ehtiva edə bilər"
+      },
+      "email": {
+        "invalid": "Düzgün email ünvanı daxil edin",
+        "min": "Email ən azı 5 simvol olmalıdır",
+        "max": "Email 100 simvoldan çox olmamalıdır"
+      },
+      "phone": {
+        "regex": "Düzgün telefon nömrəsi daxil edin",
+        "min": "Telefon nömrəsi ən azı 7 rəqəm olmalıdır",
+        "max": "Telefon nömrəsi 20 simvoldan çox olmamalıdır"
+      },
+      "description": {
+        "min": "Təsvir ən azı 10 simvol olmalıdır",
+        "max": "Təsvir 500 simvoldan çox olmamalıdır"
+      }
     },
     "button": "Göndərmək",
     "contact": {
