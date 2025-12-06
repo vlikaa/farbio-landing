@@ -5,6 +5,7 @@ import { hasLocale } from 'use-intl';
 import { routing } from '@/i18n/routing';
 import { NextIntlClientProvider } from 'next-intl';
 import { Inter, Roboto } from 'next/font/google'
+import { Toaster } from 'sonner';
 
 const inter = Inter({
 	subsets: ['latin', 'cyrillic'],
@@ -36,6 +37,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[lo
 		<body className={`${inter.className} ${roboto.className}`}>
 		<NextIntlClientProvider>
 			{ children }
+			<Toaster />
 		</NextIntlClientProvider>
 		</body>
 		</html>
