@@ -28,7 +28,9 @@ export default function Services() {
 				<SectionTitle title={ t('tag') } />
 
 				<h2 className="text-[26px] md:text-[48px] mt-[20px] mb-[10px] md:mt-[40px] md:mb-[20px] font-roboto font-bold md:font-extrabold text-center text-[#2D2D2D]">
-					{ t('title') }
+					{ t.rich('title', {
+						green: (chunks) => <span className="text-[#00823F]">{chunks}</span>
+					})}
 				</h2>
 
 				<p className="mb-[40px] md:mb-[60px] text-[12px] md:text-[16px] font-inter font-light text-center text-[#2D2D2D] whitespace-pre-line 2xl:mb-[100px]">
