@@ -16,82 +16,36 @@ type Review = {
 
 export default function Reviews() {
 	const t = useTranslations('Reviews');
-	const [reviews, setReviews] = useState<Review[]>([]);
-	const fallbackReviews = useMemo<Review[]>(() => {
-		const items = t.raw('items') as Array<{ text: string }>;
-		return items.map((item, index) => ({
-			id: index,
-			text: item.text,
-		}));
+
+	const localizedReviews = useMemo<Review[]>(() => {
+		try {
+			const items = t.raw('items');
+
+			if (Array.isArray(items)) {
+				return items as Review[];
+			}
+
+			return [];
+		} catch (error) {
+			console.error('Failed to load localized reviews:', error);
+			return [];
+		}
 	}, [t]);
 
-	useEffect(() => {
-		let isMounted = true;
-		const controller = new AbortController();
-
-		const fetchReviews = async () => {
-			try {
-				const response = await fetch('/api/reviews', {
-					signal: controller.signal,
-					cache: 'no-store',
-				});
-
-				if (!response.ok) {
-					throw new Error('Failed to load reviews');
-				}
-
-				const data = (await response.json()) as Review[];
-
-				if (isMounted) {
-					setReviews(data);
-				}
-			} catch (error) {
-				if (error instanceof DOMException && error.name === 'AbortError') {
-					return;
-				}
-
-				if (process.env.NODE_ENV !== 'production') {
-					console.error('Unable to load reviews', error);
-				}
-			}
-		};
-
-		fetchReviews();
-
-		return () => {
-			isMounted = false;
-			controller.abort();
-		};
-	}, []);
-
-	const reviewsSet = reviews.length ? reviews : fallbackReviews;
-
 	return (
-		<section id="reviews" className="py-[50px] md:pt-[100px] bg-gradient-to-b from-[#00D969]/30 via-white to-white 2xl:pt-[200px]">
+		<section id="reviews" className="pt-[50px] md:pt-[100px] bg-gradient-to-b from-[#00D969]/30 via-white to-white 2xl:pt-[200px]">
 			<div className="flex flex-col items-center">
 				<SectionTitle title={ t('tag') }/>
 
 				<h2 className="w-[335px] mt-[20px] mb-[40px] text-[26px] font-inter font-bold text-center md:mt-[40px] md:mb-[60px] md:w-[650px] md:text-[48px] md:font-extrabold md:font-roboto 2xl:mb-[100px] xl:w-full">
-					{ (() => {
-						const title = t('title');
-						const highlightWord = title.includes('говорят') ? 'говорят' : title.includes('deyir') ? 'deyir' : '';
-						if (highlightWord) {
-							const parts = title.split(highlightWord);
-							return (
-								<>
-									<span className="text-[#2D2D2D]">{ parts[0] }</span>
-									<span className="text-[#00823F]">{ highlightWord }</span>
-									<span className="text-[#2D2D2D]">{ parts[1] }</span>
-								</>
-							);
-						}
-						return <span className="text-[#2D2D2D]">{ title }</span>;
-					})() }
+					{ t.rich('title', {
+						green: (chunks) => <span className="text-[#00823F]">{ chunks }</span>
+					}) }
 				</h2>
 
 				<div className="relative w-full overflow-hidden">
 					<Marquee pauseOnHover={true}>
-						{ reviewsSet.map((review, index) => (
+						{ localizedReviews.map((review, index) => (
 							<ReviewCard
 								avatarPath={ review.avatar }
 								stars={ review.rating ?? 5 }
