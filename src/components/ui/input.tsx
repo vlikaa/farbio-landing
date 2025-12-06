@@ -1,45 +1,22 @@
-'use client'
+import * as React from 'react'
 
-import { useTranslations } from 'next-intl'
+import { cn } from '@/lib/utils'
 
-interface InputProps {
-	name: string;
-	type?: 'text' | 'email' | 'tel' | 'password';
-	value: string
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	required?: boolean;
-	placeholder?: string;
-	translationKey?: string;
-	className?: string;
-}
-
-export function Input({
-						  name,
-						  type = 'text',
-						  value,
-						  onChange,
-						  required = false,
-						  placeholder,
-						  translationKey,
-						  className = ''
-					  }: InputProps) {
-	const t = useTranslations()
-
-	const resolvedPlaceholder = translationKey
-		? t(translationKey as string)
-		: placeholder
-
+function Input({ className, type, ...props }: React.ComponentProps<'input'>) {
 	return (
 		<input
 			type={ type }
-			name={ name }
-			value={ value }
-			onChange={ onChange }
-			required={ required }
-			placeholder={ resolvedPlaceholder }
-			className={ `w-full flex items-center px-[15px] py-[17px] bg-white/30 border border-white/23 rounded-lg text-white placeholder-white/90 text-[12px] font-inter font-light focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200
-        ${ className }
-      ` }
+			data-slot="input"
+			className={ cn(
+				'file:text-white placeholder:text-white/75 text-inter text-[12px] text-light dark:bg-input/30 h-[50px] w-full min-w-0 rounded-md border border-white/23 bg-white/30 px-[10px] py-[18px]  shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+				'text-white',
+				'focus-visible:ring-white/50 focus-visible:ring-[2px]',
+				'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+				className
+			) }
+			{ ...props }
 		/>
 	)
 }
+
+export { Input }
