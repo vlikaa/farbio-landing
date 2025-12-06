@@ -76,7 +76,7 @@ export default function Footer() {
 					/>
 					<SocialIcon
 						icon={ <TelegramIcon/> }
-						href="https://t.me"
+						href="https://t.me/farbioaz"
 					/>
 					<SocialIcon
 						icon={ <InstagramIcon/> }
