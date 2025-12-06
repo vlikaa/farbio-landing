@@ -1,72 +1,87 @@
 'use client'
 
-import { FormEvent, useState } from 'react';
 import { useTranslations } from 'use-intl';
-import { Input } from '@/components/ui/input';
 import { PhoneIcon } from '@/components/icons/phone-icon';
 import { FacebookIcon } from '@/components/icons/facebook-icon';
 import { EmailIcon } from '@/components/icons/email-icon';
 import ContactItem from '@/components/ui/contact-item';
-
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Controller, useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+import * as z from 'zod'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Field, FieldError, FieldGroup } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { InputGroup, InputGroupTextarea } from '@/components/ui/input-group'
 
 export default function ConsultationForm() {
 	const t = useTranslations('ConsultationForm');
-	const [formData, setFormData] = useState({
-		firstName: '',
-		lastName: '',
-		email: '',
-		phone: '',
-		description: ''
+
+	const formSchema = z.object({
+		name: z
+			.string()
+			.min(2, { message: t('validation.name.min') })
+			.max(50, { message: t('validation.name.max') })
+			.regex(/^[a-zA-ZА-Яа-яёЁA-Za-zÇçƏəĞğİıÖöŞşÜü\s-]+$/, {
+				message: t('validation.name.regex')
+			}),
+		surname: z
+			.string()
+			.min(2, { message: t('validation.surname.min') })
+			.max(50, { message: t('validation.surname.max') })
+			.regex(/^[a-zA-ZА-Яа-яёЁA-Za-zÇçƏəĞğİıÖöŞşÜü\s-]+$/, {
+				message: t('validation.surname.regex')
+			}),
+		email: z
+			.string()
+			.email({ message: t('validation.email.invalid') })
+			.min(5, { message: t('validation.email.min') })
+			.max(100, { message: t('validation.email.max') }),
+		phone: z
+			.string()
+			.regex(/^[\+]?[0-9\s\-\(\)]+$/, {
+				message: t('validation.phone.regex')
+			})
+			.min(7, { message: t('validation.phone.min') })
+			.max(20, { message: t('validation.phone.max') }),
+		description: z
+			.string()
+			.min(10, { message: t('validation.description.min') })
+			.max(500, { message: t('validation.description.max') })
+			.optional(),
 	});
-	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		const { name, value } = e.target;
-		setFormData(prev => ({
-			...prev,
-			[name]: value
-		}));
-	};
 
-	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		setIsSubmitting(true);
-		setSubmitStatus('idle');
+	const form = useForm<z.infer<typeof formSchema>>({
+		resolver: zodResolver(formSchema),
+		defaultValues: {
+			name: '',
+			surname: '',
+			email: '',
+			phone: '',
+			description: '',
+		},
+	})
 
-		try {
-			const response = await fetch('/api/send-email', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
-			});
+	function onSubmit(data: z.infer<typeof formSchema>) {
+		toast(t('toast'), {
+			position: 'bottom-right',
+			classNames: {
+				content: 'flex flex-col gap-2',
+			},
+			style: {
+				'--border-radius': 'calc(var(--radius)  + 4px)',
+			} as React.CSSProperties,
+		})
 
-			if (response.ok) {
-				setSubmitStatus('success');
-				setFormData({
-					firstName: '',
-					lastName: '',
-					email: '',
-					phone: '',
-					description: ''
-				});
-			} else {
-				setSubmitStatus('error');
-			}
-		} catch (error) {
-			console.error('Error submitting form:', error);
-			setSubmitStatus('error');
-		} finally {
-			setIsSubmitting(false);
-		}
-	};
+		form.reset();
+	}
 
 	return (
 		<section id="consultation"
 				 className="flex flex-col items-center py-[50px] md:py-[100px] px-[20px] bg-gradient-to-br from-[#006D35] to-[#00D366] 2xl:py-[200px]">
-			<h2 className="text-[26px] md:text-[48px] font-inter font-bold md:font-extrabold text-center text-white">
+			<h2 className="text-[26px] md:text-[48px] font-inter font-bold md:font-extrabold text-center text-white w-[300px] md:w-[600] xl:w-full">
 				{ t('title') }
 			</h2>
 
@@ -74,87 +89,123 @@ export default function ConsultationForm() {
 				{ t('subtitle') }
 			</p>
 
-			<div className="2xl:flex gap-[400px] items-center">
+			<div className="flex flex-col  items-center 2xl:flex-row 2xl:gap-[400px]">
+				<Card className="bg-white/19 border-white/23 mb-[10px] gap-[12px] w-[335px] md:w-[498px] md:mb-[37px] md:px-[12px]">
+					<CardHeader>
+						<CardTitle className="md:text-[24px] md:font-roboto md:font-extrabold">{ t('formTitle') }</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<form id="form-rhf-demo" onSubmit={ form.handleSubmit(onSubmit) }>
+							<FieldGroup>
+								<div className="flex gap-[10px]">
+									<Controller
+										name="name"
+										control={ form.control }
+										render={ ({ field, fieldState }) => (
+											<Field data-invalid={ fieldState.invalid }>
+												<Input
+													{ ...field }
+													id="form-rhf-demo-title"
+													aria-invalid={ fieldState.invalid }
+													placeholder={ t('fields.firstName') }
+													autoComplete="off"
+												/>
+												{ fieldState.invalid && (
+													<FieldError errors={ [fieldState.error] }/>
+												) }
+											</Field>
+										) }
+									/>
+
+									<Controller
+										name="surname"
+										control={ form.control }
+										render={ ({ field, fieldState }) => (
+											<Field data-invalid={ fieldState.invalid }>
+												<Input
+													{ ...field }
+													id="form-rhf-demo-title"
+													aria-invalid={ fieldState.invalid }
+													placeholder={ t('fields.lastName') }
+													autoComplete="off"
+												/>
+												{ fieldState.invalid && (
+													<FieldError errors={ [fieldState.error] }/>
+												) }
+											</Field>
+										) }
+									/>
+								</div>
+								<Controller
+									name="email"
+									control={ form.control }
+									render={ ({ field, fieldState }) => (
+										<Field data-invalid={ fieldState.invalid }>
+											<Input
+												{ ...field }
+												id="form-rhf-demo-title"
+												aria-invalid={ fieldState.invalid }
+												placeholder={ t('fields.email') }
+												autoComplete="off"
+											/>
+											{ fieldState.invalid && (
+												<FieldError errors={ [fieldState.error] }/>
+											) }
+										</Field>
+									) }
+								/>
+								<Controller
+									name="phone"
+									control={ form.control }
+									render={ ({ field, fieldState }) => (
+										<Field data-invalid={ fieldState.invalid }>
+											<Input
+												{ ...field }
+												id="form-rhf-demo-title"
+												aria-invalid={ fieldState.invalid }
+												placeholder={ t('fields.phone') }
+												autoComplete="off"
+											/>
+											{ fieldState.invalid && (
+												<FieldError errors={ [fieldState.error] }/>
+											) }
+										</Field>
+									) }
+								/>
+								<Controller
+									name="description"
+									control={ form.control }
+									render={ ({ field, fieldState }) => (
+										<Field data-invalid={ fieldState.invalid }>
+											<InputGroup>
+												<InputGroupTextarea
+													{ ...field }
+													id="form-rhf-demo-description"
+													placeholder={ t('fields.description') }
+													rows={ 2 }
+													className="min-h-24 resize-none"
+													aria-invalid={ fieldState.invalid }
+												/>
+											</InputGroup>
+											{ fieldState.invalid && (
+												<FieldError errors={ [fieldState.error] }/>
+											) }
+										</Field>
+									) }
+								/>
+							</FieldGroup>
+						</form>
+					</CardContent>
+					<CardFooter>
+						<Button type="submit" form="form-rhf-demo"
+								className="w-full mt-[10px] bg-white text-[#00823F] h-[50px] rounded-[6px] font-semibold hover:bg-[#CCF7E1] hover:text-[#00572A] md:mt-[30px]">
+							{ t('button') }
+						</Button>
+					</CardFooter>
+				</Card>
+
 				<div
-					className="mb-[25px] md:mb-[37px] xl:mb-[60px] px-[20px] py-[30px] md:px-[33px] md:py-[40px] bg-white/20 border border-white/20 rounded-xl">
-					<h3 className="mb-[20px] md:mb-[12px] text-[16px] md:text-[24px] font-roboto font-medium md:font-extrabold text-white">
-						{ t('formTitle') }
-					</h3>
-
-					<form onSubmit={ handleSubmit } className="flex flex-col gap-[10px]">
-						<div className="flex gap-[10px]">
-							<Input
-								type="text"
-								name="firstName"
-								value={ formData.firstName }
-								onChange={ handleChange }
-								required
-								placeholder={ t('fields.firstName') }
-							/>
-							<Input
-								type="text"
-								name="lastName"
-								value={ formData.lastName }
-								onChange={ handleChange }
-								placeholder={ t('fields.lastName') }
-							/>
-						</div>
-
-						<div>
-							<Input
-								type="email"
-								name="email"
-								value={ formData.email }
-								onChange={ handleChange }
-								required
-								placeholder={ t('fields.email') }
-							/>
-						</div>
-
-						<div>
-							<Input
-								type="tel"
-								name="phone"
-								value={ formData.phone }
-								onChange={ handleChange }
-								required
-								placeholder={ t('fields.phone') }
-							/>
-						</div>
-
-						<div>
-							<textarea
-								name="description"
-								value={ formData.description }
-								onChange={ handleChange }
-								rows={ 4 }
-								placeholder={ t('fields.description') }
-								className="w-full px-[15px] py-[15px] mb-[20px] md:mb-[40px] bg-white/30 border border-white/23 rounded-lg text-white placeholder-white/90 text-[12px] font-inter font-light resize-none focus:outline-none focus:ring-2 focus:ring-white/50"
-							/>
-						</div>
-
-						<button
-							type="submit"
-							disabled={ isSubmitting }
-							className="w-[290px] md:w-[430px] py-3 bg-white rounded-md text-[#00823F] text-[12px] md:text-[14px] font-inter font-semibold leading-[15px] hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
-						>
-							{ isSubmitting ? 'Отправка...' : t('button') }
-						</button>
-
-						{ submitStatus === 'success' && (
-							<p className="text-center text-white text-sm">
-								{ t('success') }
-							</p>
-						) }
-						{ submitStatus === 'error' && (
-							<p className="text-center text-red-200 text-sm">
-								{ t('error') }
-							</p>
-						) }
-					</form>
-				</div>
-
-				<div className="grid grid-cols-2 md:grid-cols-3 gap-x-[60px] gap-y-[20px] 2xl:grid-cols-1 2xl:h-[336px]">
+					className="grid grid-cols-2 md:grid-cols-3 gap-x-[60px] gap-y-[20px] md:gap-x-[10px] xl:gap-x-[33px] 2xl:grid-cols-1 2xl:h-[336px]">
 					<ContactItem
 						icon={ <PhoneIcon/> }
 						label={ t('contact.phone') }
