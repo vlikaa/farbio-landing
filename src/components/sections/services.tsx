@@ -1,6 +1,4 @@
-'use client'
-
-import { useTranslations } from 'use-intl';
+import { getTranslations } from 'next-intl/server';
 import SectionTitle from '@/components/ui/section-title';
 import ServiceCard from '@/components/ui/service-card';
 import DesignIcon from '@/components/icons/design-icon';
@@ -10,8 +8,8 @@ import { PlantIcon } from '@/components/icons/plant-icon';
 import { WaterIcon } from '@/components/icons/water-icon';
 import { ScissorsIcon } from '@/components/icons/scissors-icon';
 
-export default function Services() {
-	const t = useTranslations('Services');
+export default async function Services() {
+	const t = await getTranslations('Services');
 
 	const services = [
 		{ key: 'design', icon: <DesignIcon /> },
