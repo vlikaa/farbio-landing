@@ -1,10 +1,8 @@
-'use client'
-
-import { useTranslations } from 'use-intl';
+import { getTranslations } from 'next-intl/server';
 import CustomButton from '@/components/ui/custom-button';
 
-export default function Hero() {
-	const t = useTranslations('Hero');
+export default async function Hero() {
+	const t = await getTranslations('Hero');
 
 	return (
 		<section className="flex flex-col items-center bg-gradient-to-br from-[#00D366] to-[#006D35] py-[50px] md:py-[100px] 2xl:py-[200px]">
