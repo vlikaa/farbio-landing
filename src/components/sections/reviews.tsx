@@ -1,7 +1,4 @@
-'use client'
-
-import { useMemo } from 'react';
-import { useTranslations } from 'use-intl';
+import { getTranslations } from 'next-intl/server';
 import SectionTitle from '@/components/ui/section-title';
 import { ReviewCard } from '@/components/ui/review-card';
 import { Marquee } from '@/components/ui/marquee';
@@ -14,23 +11,20 @@ type Review = {
 	avatar?: string;
 };
 
-export default function Reviews() {
-	const t = useTranslations('Reviews');
+export default async function Reviews() {
+	const t = await getTranslations('Reviews');
 
-	const localizedReviews = useMemo<Review[]>(() => {
-		try {
-			const items = t.raw('items');
+	let localizedReviews: Review[] = [];
 
-			if (Array.isArray(items)) {
-				return items as Review[];
-			}
+	try {
+		const items = t.raw('items');
 
-			return [];
-		} catch (error) {
-			console.error('Failed to load localized reviews:', error);
-			return [];
+		if (Array.isArray(items)) {
+			localizedReviews = items as Review[];
 		}
-	}, [t]);
+	} catch (error) {
+		console.error('Failed to load localized reviews:', error);
+	}
 
 	return (
 		<section id="reviews" className="pt-[50px] md:pt-[100px] bg-gradient-to-b from-[#00D969]/30 via-white to-white 2xl:pt-[200px]">
