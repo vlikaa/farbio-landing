@@ -1,11 +1,8 @@
-import { getTranslations } from 'next-intl/server';
-
 interface StructuredDataProps {
 	locale: string;
 }
 
 export default async function StructuredData({ locale }: StructuredDataProps) {
-	const t = await getTranslations({ locale });
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://farbio.az';
 	
 	const structuredData = {
