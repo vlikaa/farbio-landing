@@ -64,7 +64,8 @@
         "label": "150 +",
         "value": "Bitki növü"
       }
-    }
+    },
+    "imageAlt": "Peşəkar bağçı - Farbio komandası"
   },
   "Reviews": {
     "tag": "rəylər",
@@ -87,6 +88,18 @@
         "text": "İki il əvvəl bağımıza əkdikləri kiçik kallistemona kolu indi iki metr hündürlüyə çatıb. Çox sağ olun!",
         "rating": 5,
         "avatar": "/images/reviews/user3-avatar.png"
+      },
+      {
+        "id": 4,
+        "text": "Mən həm torpaq, həm də gübrə aldım. Alışımdan, xidmətdən və vaxtında çatdırılmadan razıyam! ✊",
+        "rating": 5,
+        "avatar": "/images/reviews/user4-avatar.png"
+      },
+      {
+        "id": 5,
+        "text": "Torpaq mükəmməl keyfiyyətdədir. Mən həmişə onlardan alıram və çox razıyam. Qeyd edim ki, eyni torpaq şəhərdə daha bahalıdır və çatdırılma daxil deyil.",
+        "rating": 5,
+        "avatar": "/images/reviews/user5-avatar.png"
       }
     ]
   },
