@@ -44,9 +44,17 @@ export default function Portfolio() {
 				</h2>
 
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-x-[10px] gap-y-[20px] mb-[40px] md:gap-x-[20px] md:gap-y-[30px] xl:mb-[60px] 2xl:grid-cols-6 2xl:mb-[100px]">
-					{ displayedImages.map((src, index) => (
-						<PortfolioImage key={ `${ src }-${ index }` } src={ src } alt={ `Portfolio image ${ index + 1 }` }/>
-					)) }
+					{ displayedImages.map((src, index) => {
+						const imageNumber = index + 1;
+						const altText = `${ t('tag') } - (${ imageNumber })`;
+						return (
+							<PortfolioImage 
+								key={ `${ src }-${ index }` } 
+								src={ src } 
+								alt={ altText }
+							/>
+						);
+					}) }
 				</div>
 
 				<button

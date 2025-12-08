@@ -17,10 +17,18 @@ const navigationKeys = [
 	{ key: 'portfolio', href: '#portfolio' }
 ];
 
-
 export default function Header() {
 	const t = useTranslations('Header');
-	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		e.preventDefault();
+
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	};
 
 	const handleMenuToggle = () => {
 		setIsMenuOpen(!isMenuOpen)
@@ -38,10 +46,10 @@ export default function Header() {
 
 
 	return (
-		<header className="sticky z-20 top-0 left-0 bg-white">
+		<header id="header" className="sticky z-20 top-0 left-0 bg-white">
 			<div className="flex justify-between items-center px-[20px] py-[5px] xl:grid md:grid-cols-3 md:px-[60px] 2xl:px-[100px] 2xl:py-[20px]">
 				<div className="flex justify-start">
-					<Link href="/">
+					<Link href="/" onClick={handleClick}>
 						<Logo/>
 					</Link>
 				</div>

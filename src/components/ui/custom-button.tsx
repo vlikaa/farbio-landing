@@ -1,3 +1,5 @@
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+
 interface ButtonProps {
 	title: string;
 	className: string;
@@ -5,21 +7,11 @@ interface ButtonProps {
 }
 
 export default function CustomButton({ title, className, href }: ButtonProps) {
+	const scrollTo = useSmoothScroll();
+
 	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault();
-
-		const sectionId = href.replace('#', '');
-		const section = document.getElementById(sectionId);
-
-		if (section) {
-			const headerHeight = 50;
-			const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-			window.scrollTo({
-				top: sectionTop,
-				behavior: 'smooth'
-			});
-		}
+		scrollTo(href);
 	}
 
 	return (

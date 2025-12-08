@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { NavItem } from '@/types/navigation';
 import LanguageSwitcher from '@/components/ui/language-switcher';
 import { PhoneIcon } from '@/components/icons/phone-icon';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 interface BurgerMenuProps {
 	isOpen: boolean
@@ -11,23 +12,18 @@ interface BurgerMenuProps {
 
 function BurgerMenu({ isOpen, onClose, items }: BurgerMenuProps) {
 	const menuRef = useRef<HTMLDivElement>(null)
+	const scrollTo = useSmoothScroll();
 
 	const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
 		e.preventDefault();
-		onClose()
+		onClose();
+		scrollTo(item.href);
+	}
 
-		const sectionId = item.href.replace('#', '');
-		const section = document.getElementById(sectionId);
-
-		if (section) {
-			const headerHeight = 50;
-			const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-			window.scrollTo({
-				top: sectionTop,
-				behavior: 'smooth'
-			});
-		}
+	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		e.preventDefault();
+		onClose();
+		scrollTo("#consultation");
 	}
 
 
@@ -61,7 +57,9 @@ function BurgerMenu({ isOpen, onClose, items }: BurgerMenuProps) {
 					<LanguageSwitcher/>
 
 					<div className="w-[40px] h-[40px]">
-						<PhoneIcon/>
+						<a onClick={handleClick}>
+							<PhoneIcon/>
+						</a>
 					</div>
 				</div>
 			</div>

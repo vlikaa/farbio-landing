@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { NavigationItemProps } from '@/types/navigation';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 function NavigationItem({ item }: NavigationItemProps) {
 	const [isActive, setIsActive] = useState(false);
+
+	const scrollTo = useSmoothScroll();
 
 	useEffect(() => {
 		const sectionId = item.href.replace('#', '');
@@ -39,18 +42,7 @@ function NavigationItem({ item }: NavigationItemProps) {
 
 	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault();
-		const sectionId = item.href.replace('#', '');
-		const section = document.getElementById(sectionId);
-
-		if (section) {
-			const headerHeight = 50;
-			const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-			window.scrollTo({
-				top: sectionTop,
-				behavior: 'smooth'
-			});
-		}
+		scrollTo(item.href);
 	};
 
 	return (

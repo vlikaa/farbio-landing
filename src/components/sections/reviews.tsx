@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useTranslations } from 'use-intl';
 import SectionTitle from '@/components/ui/section-title';
 import { ReviewCard } from '@/components/ui/review-card';

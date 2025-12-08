@@ -39,7 +39,6 @@ export default function LanguageSwitcher() {
 				variant="outline"
 				role="combobox"
 				aria-expanded={ false }
-				className="justify-between"
 			>
 				{ locale.toUpperCase() }
 				<ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50"/>

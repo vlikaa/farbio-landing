@@ -1,12 +1,13 @@
 'use client'
 
-import { useTranslations } from 'use-intl';
+import { useTranslations, useLocale } from 'use-intl';
 import SectionTitle from '@/components/ui/section-title';
 import { StatItem } from '@/components/ui/stat-item';
 import Image from 'next/image';
 
 export default function About() {
 	const t = useTranslations('About');
+	const locale = useLocale();
 
 	return (
 		<section id="about" className="relative overflow-hidden ">
@@ -56,11 +57,12 @@ export default function About() {
 
 						<Image
 							src="/images/gardener.webp"
-							alt="gardener img"
+							alt={ locale === 'az' ? 'Peşəkar bağçı - Farbio komandası' : 'Профессиональный садовник - команда Farbio' }
 							width={ 216 }
 							height={ 289 }
 							unoptimized={true}
 							className="absolute bottom-0 right-0 md:bottom-[-435px] md:right-[-60px] md:w-[561px] md:h-[748px] xl:w-[428px] xl:h-[571px] xl:bottom-0 xl:right-[82px] 2xl:w-[578px] 2xl:h-[737px] 2xl:right-[252px]"
+							sizes="(max-width: 768px) 216px, (max-width: 1280px) 428px, 578px"
 						/>
 					</div>
 				</div>
