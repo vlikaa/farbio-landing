@@ -1,6 +1,4 @@
-'use client'
-
-import { useTranslations } from 'use-intl';
+import { getTranslations } from 'next-intl/server';
 import Logo from '@/components/ui/logo';
 import { FacebookIcon } from '@/components/icons/facebook-icon';
 import { WhatsappIcon } from '@/components/icons/whatsapp-icon';
@@ -8,9 +6,9 @@ import { TelegramIcon } from '@/components/icons/telegram-icon';
 import { InstagramIcon } from '@/components/icons/instagram-icon';
 import SocialIcon from '@/components/ui/social-icon';
 
-export default function Footer() {
-	const t = useTranslations('Footer');
-	const consultationForm = useTranslations('ConsultationForm');
+export default async function Footer() {
+	const t = await getTranslations('Footer');
+	const consultationForm = await getTranslations('ConsultationForm');
 
 	return (
 		<footer className="xl:flex xl:flex-col py-[50px] md:py-[100px] px-[20px] md:px-[60px] bg-[#160D32] 2xl:px-[100px]">
@@ -72,7 +70,7 @@ export default function Footer() {
 					/>
 					<SocialIcon
 						icon={ <FacebookIcon/> }
-						href="https://facebook.com"
+						href="https://www.facebook.com/groups/886492451782494"
 					/>
 					<SocialIcon
 						icon={ <TelegramIcon/> }
@@ -80,7 +78,7 @@ export default function Footer() {
 					/>
 					<SocialIcon
 						icon={ <InstagramIcon/> }
-						href="https://instagram.com"
+						href="https://www.instagram.com/farbioaz"
 					/>
 				</div>
 
