@@ -1,3 +1,5 @@
+'use client'
+
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 interface ButtonProps {
