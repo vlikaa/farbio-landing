@@ -1,13 +1,10 @@
-'use client'
-
-import { useTranslations, useLocale } from 'use-intl';
+import { getTranslations } from 'next-intl/server';
 import SectionTitle from '@/components/ui/section-title';
 import { StatItem } from '@/components/ui/stat-item';
 import Image from 'next/image';
 
-export default function About() {
-	const t = useTranslations('About');
-	const locale = useLocale();
+export default async function About() {
+	const t = await getTranslations('About');
 
 	return (
 		<section id="about" className="relative overflow-hidden ">
@@ -57,7 +54,7 @@ export default function About() {
 
 						<Image
 							src="/images/gardener.webp"
-							alt={ locale === 'az' ? 'Peşəkar bağçı - Farbio komandası' : 'Профессиональный садовник - команда Farbio' }
+							alt={ t('imageAlt') }
 							width={ 216 }
 							height={ 289 }
 							unoptimized={true}
