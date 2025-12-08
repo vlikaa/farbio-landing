@@ -1,14 +1,9 @@
-'use client'
-
-import Link from 'next/link';
-import Logo from '@/components/ui/logo';
 import NavigationBar from '@/components/ui/navigation-bar';
 import CustomButton from '@/components/ui/custom-button';
 import LanguageSwitcher from '@/components/ui/language-switcher';
-import { useTranslations } from 'use-intl';
-import { useState } from 'react';
-import BurgerButton from '@/components/ui/burger-button';
+import { getTranslations } from 'next-intl/server';
 import BurgerMenu from '@/components/ui/burger-menu';
+import LogoLink from '@/components/ui/logo-link';
 
 const navigationKeys = [
 	{ key: 'services', href: '#services' },
@@ -17,41 +12,20 @@ const navigationKeys = [
 	{ key: 'portfolio', href: '#portfolio' }
 ];
 
-export default function Header() {
-	const t = useTranslations('Header');
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-		e.preventDefault();
-
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		});
-	};
-
-	const handleMenuToggle = () => {
-		setIsMenuOpen(!isMenuOpen)
-	}
-
-	const handleMenuClose = () => {
-		setIsMenuOpen(false)
-	}
-
+export default async function Header() {
+	const t = await getTranslations( 'Header' );
 
 	const navigation = navigationKeys.map(item => ({
 		name: t(item.key),
 		href: item.href
 	}));
 
-
 	return (
 		<header id="header" className="sticky z-20 top-0 left-0 bg-white">
 			<div className="flex justify-between items-center px-[20px] py-[5px] xl:grid md:grid-cols-3 md:px-[60px] 2xl:px-[100px] 2xl:py-[20px]">
 				<div className="flex justify-start">
-					<Link href="/" onClick={handleClick}>
-						<Logo/>
-					</Link>
+					<LogoLink />
 				</div>
 
 				<div className="flex justify-center">
@@ -67,8 +41,7 @@ export default function Header() {
 				</div>
 
 				<div className="justify-end xl:hidden">
-					<BurgerButton isOpen={ isMenuOpen } onClick={ handleMenuToggle }/>
-					<BurgerMenu isOpen={ isMenuOpen } onClose={ handleMenuClose } items={ navigation }/>
+					<BurgerMenu items={navigation} />
 				</div>
 			</div>
 		</header>
