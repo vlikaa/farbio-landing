@@ -56,7 +56,7 @@ function BurgerLayout({ isOpen, onClose, items }: BurgerMenuProps) {
 					<LanguageSwitcher/>
 
 					<div className="w-[40px] h-[40px]">
-						<a onClick={handleClick}>
+						<a href="tel:+994506748535">
 							<PhoneIcon/>
 						</a>
 					</div>
