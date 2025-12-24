@@ -14,7 +14,7 @@ const navigationKeys = [
 
 
 export default async function Header() {
-	const t = await getTranslations( 'Header' );
+	const t = await getTranslations('Header');
 
 	const navigation = navigationKeys.map(item => ({
 		name: t(item.key),
@@ -23,9 +23,10 @@ export default async function Header() {
 
 	return (
 		<header id="header" className="sticky z-20 top-0 left-0 bg-white">
-			<div className="flex justify-between items-center px-[20px] py-[5px] xl:grid md:grid-cols-3 md:px-[60px] 2xl:px-[100px] 2xl:py-[20px]">
+			<div
+				className="flex justify-between items-center px-[20px] py-[5px] xl:grid md:grid-cols-3 md:px-[60px] 2xl:px-[100px] 2xl:py-[20px]">
 				<div className="flex justify-start">
-					<LogoLink />
+					<LogoLink/>
 				</div>
 
 				<div className="flex justify-center">
@@ -34,14 +35,17 @@ export default async function Header() {
 
 				<div className="hidden xl:flex justify-end items-center gap-[20px] 2xl:gap-[60px]">
 					<LanguageSwitcher/>
-					<CustomButton
-						href="#consultation"
-						className="flex items-center justify-center rounded-md h-[30px] w-[177px] bg-[#00823F] text-white cursor-pointer hover:opacity-90"
-						title={ t('call') }/>
+					<a
+						href="tel:+994506748535"
+						className="text-[12px] font-semibold font-inter flex items-center justify-center rounded-md h-[30px] w-[177px] bg-[#00823F] text-white cursor-pointer hover:opacity-90"
+					>
+						{ t('call') }
+					</a>
+
 				</div>
 
 				<div className="justify-end xl:hidden">
-					<BurgerMenu items={navigation} />
+					<BurgerMenu items={ navigation }/>
 				</div>
 			</div>
 		</header>
