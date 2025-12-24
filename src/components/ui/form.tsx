@@ -112,7 +112,6 @@ export default function Form({
 			const result = await response.json();
 
 			if (response.ok) {
-				// Успешная отправка
 				toast.success(translations.toast, {
 					position: 'top-center',
 					duration: 5000,
@@ -123,7 +122,6 @@ export default function Form({
 				});
 				form.reset();
 			} else {
-				// Ошибка сервера
 				toast.error(result.error || 'Ошибка при отправке заявки', {
 					position: 'top-center',
 					duration: 5000,
@@ -134,7 +132,6 @@ export default function Form({
 				});
 			}
 		} catch (error) {
-			// Ошибка сети
 			toast.error('Ошибка сети. Пожалуйста, попробуйте еще раз.', {
 				position: 'top-center',
 				duration: 5000,
