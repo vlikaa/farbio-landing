@@ -7,8 +7,8 @@
     "call": "Əlaqə"
   },
   "Hero": {
-    "gardening": "bağçılıq",
-    "header": "Biz yaradırıq,\nsiz zövq alırsınız",
+    "gardening": "gardening",
+    "header": "Biz yaradırıq\nsiz zövq alırsınız",
     "description": "Sahənizin qayğısını öz üzərimizə götürürük ki, siz\nsadəcə nəticədən zövq alasınız",
     "button": "Ödənişsiz konsultasiya"
   },
@@ -115,7 +115,7 @@
     "formTitle": "Sorğu göndərin",
     "fields": {
       "firstName": "Ad*",
-      "lastName": "Soyad",
+      "lastName": "Soyad*",
       "email": "e-mail*",
       "phone": "Telefon nömrəsi*",
       "description": "Sahəni təsvir edin"
